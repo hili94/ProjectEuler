@@ -1,0 +1,15 @@
+# Hili
+# Euler #2
+# TODO: clean?
+
+firstTerm, secondTerm, fibTerm, result = 1, 2, 0, 2
+
+while fibTerm <= 4000000:
+
+    fibTerm = firstTerm + secondTerm
+    if fibTerm % 2 == 0:
+       result = result + fibTerm
+    firstTerm = secondTerm
+    secondTerm = fibTerm
+
+print(result)
