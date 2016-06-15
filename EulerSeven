@@ -1,0 +1,23 @@
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+# What is the 10 001st prime number?
+
+import math
+pn = 10001
+x = math.floor(pn*math.log(pn) + pn*math.log(math.log(pn)))
+
+nn = math.floor(math.sqrt(x))
+
+L = [False] * 2 + [True] * (x - 1)
+
+for i in range(2, nn + 1):
+    if L[i]:
+        for j in range(i*i, x + 1, i):
+            L[j] = False
+
+k = 0
+for y, item in enumerate(L):
+    if item:
+        k = k + 1
+        if k == 10001:
+            print(y)
